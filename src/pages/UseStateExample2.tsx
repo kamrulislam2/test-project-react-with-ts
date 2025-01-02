@@ -12,10 +12,18 @@ const UseStateExample2 = () => {
     // console.log({ name, email });
     console.log(user);
   };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(user);
+    const inputName = e.target.name;
+    const inputValue = e.target.value;
+    console.log(inputName, inputValue);
+    setUser({ ...user, [inputName]: inputValue });
+  };
   return (
     <form onSubmit={handleSubmit}>
       <input
-        onChange={(e) => setUser({ ...user, name: e.target.value })}
+        onChange={handleChange}
         type="text"
         name="name"
         id="name"
@@ -23,7 +31,7 @@ const UseStateExample2 = () => {
       />
 
       <input
-        onChange={(e) => setUser({ ...user, email: e.target.value })}
+        onChange={handleChange}
         type="text"
         name="email"
         id="email"
