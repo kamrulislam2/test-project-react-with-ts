@@ -1,10 +1,10 @@
-import UseReducerExample from "./pages/UseReducerExample";
+import UseEffectExample from "./pages/UseEffectExample";
 
 function App() {
   return (
     <>
       <div className="h-screen w-full flex justify-center items-center">
-        <UseReducerExample />
+        <UseEffectExample />
       </div>
     </>
   );
