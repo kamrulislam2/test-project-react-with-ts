@@ -15,7 +15,7 @@ export const MenuList = ({ children }: { children: ReactNode }) => {
   );
 };
 
-const { theme } = useContext(MenuContext);
+const { theme } = useContext(MenuContext) as TMenuContext;
 export const MenuItem = () => {
   return <div>Menu Item with theme: {theme}</div>;
 };
