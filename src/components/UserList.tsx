@@ -1,7 +1,10 @@
 type UserListProps = {
   isLoading: boolean;
-  error: object;
-  data: { name: string }[];
+  error: boolean;
+  data: {
+    id: number | string;
+    name: string;
+  }[];
 };
 const UserList = ({ isLoading, error, data }: UserListProps) => {
   if (isLoading && !error) {
@@ -13,7 +16,7 @@ const UserList = ({ isLoading, error, data }: UserListProps) => {
   return (
     <div>
       {data.map((item) => (
-        <p>{item.name}</p>
+        <p key={item.id}>{item.name}</p>
       ))}
     </div>
   );
